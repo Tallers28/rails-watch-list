@@ -1,0 +1,17 @@
+<h1>All details</h1>
+
+<p><%= @list.name %></p>
+
+
+<ul>
+<% @list.bookmarks.each do |bookmark|  %>
+  <li><%= bookmark.comment %>
+      <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Delete #{bookmark.comment}?"} do %>
+        <i class="fa-regular fa-trash-can"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add new bookmark", new_list_bookmark_path(@list) %>
+
+<%= link_to "Return to homepage", lists_path %>
