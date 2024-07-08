@@ -1,8 +1,21 @@
-<h1>Lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class = "container-fluid-banner">
+  <div class = "row">
+    <div class = "banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('neon-cinema-projector-sign-vector.jpg') %>)">
+      <div class = "container-fluid-main">
+        <div class = "card-category">
+          <div class = "row">
+            <div class = "column">
+              <div class="d-flex justify-content-start-p-4">
+                <h1>Lists</h1>
+                <div id = "comment_list">
+                  <ul>
+                  <% @lists.each do |list| %>
+                    <li><%= link_to list.name, list_path(list) %></li>
+                  <% end %>
+                  </ul>
 
-<%= link_to "Add new list", new_list_path %>
+        <%= link_to "Add new list", new_list_path %>
+      </div>
+    </div>
+  </div>
+</div>
